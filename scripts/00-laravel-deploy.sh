@@ -9,7 +9,8 @@ php artisan config:cache
 echo "Caching routes..."
 php artisan route:cache
 
-php artisan queue:restart --tries=5
+echo "Running jobs"
+php artisan queue:work tries=5
 
 echo "Running migrations..."
 php artisan migrate --force
